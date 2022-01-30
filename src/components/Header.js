@@ -103,6 +103,7 @@ export default function Header() {
           type="button"
           className="button-icon container-money"
           onClick={ () => setSee(!see) }
+          data-testid="container-money"
         >
           { seeMoney(see) }
         </button>

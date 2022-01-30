@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from "react"
 import App from './App';
@@ -40,5 +40,16 @@ describe("Testando o componente header", () => {
 
     const jackpot = getAllByRole('heading', { level: 3 });
     expect(jackpot[0]).toHaveTextContent("12");
-  })
+  });
+
+  it('deve renderizar o valor que eu tenho em caixa no campo dos meus valores', async () => {
+    const { getByTestId, findByText } = render(<App />);
+    const moneyContainer = getByTestId("container-money");
+    const textMoney = moneyContainer.childNodes[1].textContent;
+    expect(textMoney).toBe("______________");
+
+    userEvent.click(moneyContainer);
+    const money = findByText("0000,00");
+    waitFor(() => expect(money).toBeInTheDocument()); 
+  });
 })
