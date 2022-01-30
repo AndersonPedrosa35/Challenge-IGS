@@ -34,8 +34,6 @@ body {
       border: 0.5px solid yellow;
       border-radius: 40px 40px 40px 40px;
       box-shadow: inset 0 0 5px gold, 0 0 1em rgb(42, 5, 66);
-      display: flex;
-      justify-content: space-between;
       margin-right: 2rem;
       height: 45px;
       width: 250px;
@@ -50,6 +48,26 @@ body {
         padding: 0.25rem 0.25rem 0.25rem 1rem;
         justify-self: flex-end;
       }
+    }
+
+    .button-icon {
+      background-color: transparent;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .container-money {
+      width: 250px;
+    }
+
+    span {
+      color: yellow;
+      margin-top: 7px;
+    }
+
+    p {
+      color: yellow;
     }
   }
 

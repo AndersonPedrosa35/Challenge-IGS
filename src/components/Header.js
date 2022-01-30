@@ -6,27 +6,53 @@ import logout from "../assets/Archive/logout_idle.png"
 
 function seeMoney(state) {
     if (state === true) {
-        return false;
+      return (
+        <>
+          <h3>$ </h3>
+          <p>0000,00</p>
+          <img src={ verSenha } alt="Dinheiro" width={ "35px" } /> 
+        </>
+      )
     }
+    return (
+      <>
+        <h3>$ </h3>
+        <span>______________</span>
+        <img src={ naoVerSenha } alt="Dinheiro" width={ "35px" } /> 
+      </>
+    )
 }
 
 export default function Header() {
-    const [setSee, see] = useState(false);
+    const [see, setSee] = useState(false);
 
   return (
     <header className='header'>
         <section className='header-container-left'>
-            <img src={ logout } alt="Sair da conta" width={"50px"} />
-            <img src={ help } alt="Ajuda" width={"50px"} />
+				  <button
+						type="button"
+						className="button-icon"
+						onClick={ () => console.log("CLICOU") }
+					>
+            <img src={ logout } alt="Sair da conta" width={ "50px" } />
+					</button>
+					<button
+						type="button"
+						className="button-icon"
+						onClick={ () => console.log("CLICOU")}
+					>
+            <img src={ help } alt="Ajuda" width={ "50px" } />
+					</button>
         </section>
       <p>Estamos online (comemore) </p>
       <section className='header-container-right'>
-            <h3>$ </h3>
-            {/* <button
+            <button
               type="button"
-              onClick={ () => setSee(!see) }>
-            </button> */}
-						<img src={ verSenha } alt="Dinheiro" width={ "35px" }/>
+							className="button-icon container-money"
+              onClick={ () => setSee(!see) }
+						>
+              { seeMoney(see) }
+            </button>
         </section>
     </header>
   );
