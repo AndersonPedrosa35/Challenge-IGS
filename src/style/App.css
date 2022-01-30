@@ -8,18 +8,31 @@ body {
     display: flex;
     flex-direction: column; }
   body .header {
-    display: flex; }
-  body .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white; }
-  body .App-link {
-    color: #61dafb; }
+    background-color: grey;
+    justify-content: space-between;
+    padding-top: 0.8rem; }
+    body .header .header-container-left {
+      padding: 0 0.8rem 0.8rem;
+      display: flex; }
+      body .header .header-container-left img {
+        margin-left: 1.25rem; }
+    body .header .header-container-right {
+      background-color: #4a55bd;
+      border: 2px solid black;
+      border-radius: 40px 40px 40px 40px;
+      display: flex;
+      justify-content: space-between;
+      margin-right: 2rem;
+      height: 45px;
+      width: 250px; }
+      body .header .header-container-right h3 {
+        margin-left: 50px;
+        align-self: center;
+        color: yellow; }
+      body .header .header-container-right img {
+        padding: 0.25rem 0.25rem 0.25rem 1rem;
+        justify-self: flex-end; }
 
 @keyframes App-logo-spin {
   from {

@@ -16,22 +16,40 @@ body {
 
   .header {
     display: flex;
-    background-color: ;
-  }
+    background-color: grey;
+    justify-content: space-between;
+    padding-top: 0.8rem;
 
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
+    .header-container-left {
+      padding: 0 0.8rem 0.8rem;
+      display: flex;
 
-  .App-link {
-    color: #61dafb;
+      img {
+        margin-left: 1.25rem;
+      }
+    }
+
+    .header-container-right {
+      background-color: rgb(74, 85, 189);
+      border: 2px solid black;
+      border-radius: 40px 40px 40px 40px;
+      display: flex;
+      justify-content: space-between;
+      margin-right: 2rem;
+      height: 45px;
+      width: 250px;
+
+      h3 {
+        margin-left: 50px;
+        align-self: center;
+        color: yellow;
+      }
+
+      img {
+        padding: 0.25rem 0.25rem 0.25rem 1rem;
+        justify-self: flex-end;
+      }
+    }
   }
 
   @keyframes App-logo-spin {
