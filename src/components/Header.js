@@ -10,7 +10,7 @@ function seeMoney(state) {
         <>
           <h3>$ </h3>
           <p>0000,00</p>
-          <img src={ verSenha } alt="Dinheiro" width={ "35px" } /> 
+          <img src={ verSenha } alt="seeMoney" width={ "35px" } /> 
         </>
       )
     }
@@ -18,7 +18,7 @@ function seeMoney(state) {
       <>
         <h3>$ </h3>
         <span>______________</span>
-        <img src={ naoVerSenha } alt="Dinheiro" width={ "35px" } /> 
+        <img src={ naoVerSenha } alt="notSeeMoney" width={ "35px" } /> 
       </>
     )
 }
