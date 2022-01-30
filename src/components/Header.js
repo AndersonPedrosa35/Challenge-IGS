@@ -60,7 +60,8 @@ export default function Header() {
           </button>
         </section>
       ) : (
-        <section className='header-container-left'>
+        <section className='header-container-left'
+        role="section">
         <button
           type="button"
           className="button-icon"
@@ -80,12 +81,13 @@ export default function Header() {
           className="button-icon"
           onClick={ () => <Link to="home" /> }
         >
-          <img src={ userImage } alt="Sair da conta" width={ "50px" } />
+          <img src={ userImage } alt="Perfil" width={ "50px" } />
         </button>
       </section>
       ) }
       
-      <section className="header-container-center">
+      <section className="header-container-center"
+      role="section">
         <h5>JACKPOT</h5>
         <span>$</span>
         <h3 className="jackpot">
@@ -95,7 +97,8 @@ export default function Header() {
           000
         </h3>
       </section>
-      <section className='header-container-right'>
+      <section className='header-container-right'
+      role="section">
         <button
           type="button"
           className="button-icon container-money"
