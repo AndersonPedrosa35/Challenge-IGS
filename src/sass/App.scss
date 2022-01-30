@@ -107,7 +107,42 @@ body {
     }
 
     @media (max-width: 420px) {
-      
+      display: flex;
+      background-image: linear-gradient(rgb(144, 20, 228), rgb(42, 5, 66));
+      justify-content: space-between;
+      padding: 0 0 10px 0;
+      margin: 0;
+
+      .header-container-left {
+        padding: 0;
+        margin: 20px 0 0 -10px;
+      }
+
+      .header-container-center {
+        background-color: rgb(42, 5, 66);
+        border: 1px solid rgb(160, 160, 37);
+        border-radius: 2rem;
+        box-shadow: inset 0 0 5px gold, 0 0 1em rgb(42, 5, 66);
+        height: 55px;
+        margin: 18px 0 0 8px;
+        padding: 0 0.5rem;
+        font-size: 16px;
+        width: 400px;
+
+        .jackpot {
+          margin: -33px 0 0 8px;
+          padding: 0;
+          font-size: 25px;
+        }
+
+        h5 {
+          margin-top: -8px;
+        }
+
+        span {
+          margin: 0 0 0 -3px;
+        }
+      }
     }
   }
 

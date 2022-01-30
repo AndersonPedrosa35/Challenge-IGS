@@ -45,6 +45,7 @@ function detectar_mobile() {
 export default function Header() {
   const [see, setSee] = useState(false);
   const [isHelp, setIsHelp] = useState(false);
+  const [isMenu, setIsMenu] = useState(false);
 
   return (
     <header className='header-image'>
@@ -53,7 +54,7 @@ export default function Header() {
            <button
             type="button"
             className="button-icon"
-            onClick={ () => setIsHelp(!isHelp)}
+            onClick={ () => setIsMenu(!isMenu)}
           >
             <img src={ menu } alt="Menu" width={ "40px" } />
           </button>
