@@ -16,7 +16,7 @@ body {
 
   .header {
     display: flex;
-    background-color: grey;
+    background-image: linear-gradient(rgb(144, 20, 228), rgb(42, 5, 66));
     justify-content: space-between;
     padding-top: 0.8rem;
 
@@ -30,9 +30,10 @@ body {
     }
 
     .header-container-right {
-      background-color: rgb(74, 85, 189);
-      border: 2px solid black;
+      background-color: rgb(42, 5, 66);
+      border: 0.5px solid yellow;
       border-radius: 40px 40px 40px 40px;
+      box-shadow: inset 0 0 5px gold, 0 0 1em rgb(42, 5, 66);
       display: flex;
       justify-content: space-between;
       margin-right: 2rem;

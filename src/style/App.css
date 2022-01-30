@@ -9,7 +9,7 @@ body {
     flex-direction: column; }
   body .header {
     display: flex;
-    background-color: grey;
+    background-image: linear-gradient(#9014e4, #2a0542);
     justify-content: space-between;
     padding-top: 0.8rem; }
     body .header .header-container-left {
@@ -18,9 +18,10 @@ body {
       body .header .header-container-left img {
         margin-left: 1.25rem; }
     body .header .header-container-right {
-      background-color: #4a55bd;
-      border: 2px solid black;
+      background-color: #2a0542;
+      border: 0.5px solid yellow;
       border-radius: 40px 40px 40px 40px;
+      box-shadow: inset 0 0 5px gold, 0 0 1em #2a0542;
       display: flex;
       justify-content: space-between;
       margin-right: 2rem;
