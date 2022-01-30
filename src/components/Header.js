@@ -8,15 +8,15 @@ function seeMoney(state) {
     if (state === true) {
       return (
         <>
-          <h3>$ </h3>
-          <p>0000,00</p>
+          <span>$</span>
+          <strong>0000,00</strong>
           <img src={ verSenha } alt="seeMoney" width={ "35px" } /> 
         </>
       )
     }
     return (
       <>
-        <h3>$ </h3>
+        <span>$</span>
         <span>______________</span>
         <img src={ naoVerSenha } alt="notSeeMoney" width={ "35px" } /> 
       </>
@@ -44,7 +44,16 @@ export default function Header() {
             <img src={ help } alt="Ajuda" width={ "50px" } />
 					</button>
         </section>
-      <p>Estamos online (comemore) </p>
+        <section className="header-container-center">
+          <h5>jackpot</h5>
+          <span>$</span>
+          <h3 className="jackpot">
+            26
+            <small>.</small>
+            000<small>.</small>
+            000
+          </h3>
+        </section>
       <section className='header-container-right'>
             <button
               type="button"

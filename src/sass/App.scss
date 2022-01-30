@@ -19,6 +19,17 @@ body {
     background-image: linear-gradient(rgb(144, 20, 228), rgb(42, 5, 66));
     justify-content: space-between;
     padding-top: 0.8rem;
+    
+    span {
+      color: yellow;
+    }
+
+    .button-icon {
+      background-color: transparent;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+    }
 
     .header-container-left {
       padding: 0 0.8rem 0.8rem;
@@ -38,36 +49,64 @@ body {
       height: 45px;
       width: 250px;
 
-      h3 {
-        margin-left: 50px;
-        align-self: center;
-        color: yellow;
-      }
-
       img {
         padding: 0.25rem 0.25rem 0.25rem 1rem;
         justify-self: flex-end;
       }
+
+      .container-money {
+        width: 250px;
+  
+        span:first-child {
+          margin: 0.25rem 0 0 3rem;
+          align-self: center;
+        }
+  
+        span {
+          margin-top: 0.5rem;
+          display: inline;
+        }
+    
+        strong {
+          display: inline;
+          color: yellow;
+          font-size: 2rem;
+          margin-top: 0.25rem;
+        }
+      }
     }
 
-    .button-icon {
-      background-color: transparent;
-      border: none;
-      display: flex;
-      justify-content: space-between;
-    }
+    .header-container-center {
+      background-color: rgb(42, 5, 66);
+      border: 1px solid rgb(160, 160, 37);
+      border-radius: 2.5rem;
+      box-shadow: inset 0 0 5px gold, 0 0 1em rgb(42, 5, 66);
+      height: 4.4rem;
+      width: 17.5rem;
+      z-index: 2;
 
-    .container-money {
-      width: 250px;
-    }
+      h5 {
+        color: yellow;
+        font-size: 1.25rem;
+        margin: -0.75rem 0 1rem;
+        text-align: center;
+        z-index: 1;
+      }
 
-    span {
-      color: yellow;
-      margin-top: 7px;
-    }
+      .jackpot {
+        font-size: 2.4rem;
+        margin-top: -2rem;
+        text-align: center;
+        color: yellow;
+      }
 
-    p {
-      color: yellow;
+      span {
+        margin-left: 2rem;
+      }
+
+      small {
+        font-size: 1rem;
+      }
     }
   }
 
