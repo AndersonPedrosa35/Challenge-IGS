@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function MiniCard(src, alt) {
+export default function MiniCard({ src, alt }) {
   return (
-      <section>
-          <img src={ src } alt={ alt } />
+      <section className="mini-card">
+          <img src={ src } alt={ alt } width={ '200px' }/>
       </section>
   );
 }
