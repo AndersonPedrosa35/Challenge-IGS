@@ -1,29 +1,30 @@
-import { render, waitFor } from '@testing-library/react';
+import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from "react"
-import App from './App';
+import renderWithRoute from './renderWithRouter';
+import App from '../App';
 
 describe("Testando o componente header", () => {
   it('deve renderizar uma imagem de logout', () => {
-    const { getByAltText } = render(<App />);
+    const { getByAltText } = renderWithRoute(<App />);
     const logout = getByAltText('Sair da conta');
     expect(logout).toBeInTheDocument();
   });
 
   it('deve renderizar um icone de perfil', () => {
-    const { getByAltText } = render(<App />);
+    const { getByAltText } = renderWithRoute(<App />);
     const perfilIcon = getByAltText("Perfil");
     expect(perfilIcon).toBeInTheDocument();
   })
 
   it("deve renderizar um icone de ajuda", () => {
-    const { getByAltText } = render(<App />);
+    const { getByAltText } = renderWithRoute(<App />);
     const iconHelp = getByAltText("Ajuda");
     expect(iconHelp).toBeInTheDocument();
   });
 
   it('deve renderizar uma imagem de mostrar e não mostrar dinheiro', () => {
-    const { getByAltText } = render(<App />);
+    const { getByAltText } = renderWithRoute(<App />);
     const iconNotSee = getByAltText("notSeeMoney");
     expect(iconNotSee).toBeInTheDocument();
 
@@ -34,7 +35,7 @@ describe("Testando o componente header", () => {
   });
 
   it('deve renderizar o preço do premio máximo jackpot', () => {
-    const { getAllByRole } = render(<App />);
+    const { getAllByRole } = renderWithRoute(<App />);
     const jackpotContainer = getAllByRole("section");
     expect(jackpotContainer[1]).toHaveClass("header-container-center");
 
@@ -43,7 +44,7 @@ describe("Testando o componente header", () => {
   });
 
   it('deve renderizar o valor que eu tenho em caixa no campo dos meus valores', async () => {
-    const { getByTestId, findByText } = render(<App />);
+    const { getByTestId, findByText } = renderWithRoute(<App />);
     const moneyContainer = getByTestId("container-money");
     const textMoney = moneyContainer.childNodes[1].textContent;
     expect(textMoney).toBe("______________");

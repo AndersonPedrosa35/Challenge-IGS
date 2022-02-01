@@ -1,16 +1,13 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './style/App.css';
-import Header from './components/Header';
-import Carrosel from './components/Carrosel';
-import Footer from './components/Footer';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Carrosel />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Route path='/' render={ () => <Home /> } />
+    </BrowserRouter>
   );
 }
 
