@@ -6,6 +6,10 @@ const candyCrushSaga = require("../assets/candy-crush-saga.png");
 const sonicTheHedgehog = require("../assets/sonic-the-hedgehog.png");
 module.exports = [
     {
+        "url": "https://www.techtudo.com.br/tudo-sobre/super-mario-world.html",
+        "image": superMarioWorld
+    },
+    {
         "url": "https://www.techtudo.com.br/tudo-sobre/subway-surfers.html",
         "image": subwaySurfers
     },
@@ -20,10 +24,6 @@ module.exports = [
     {
         "url": "https://www.techtudo.com.br/tudo-sobre/candy-crush-saga.html",
         "image": candyCrushSaga
-    },
-    {
-        "url": "https://www.techtudo.com.br/tudo-sobre/super-mario-world.html",
-        "image": superMarioWorld
     },
     {
         "url": "https://www.techtudo.com.br/tudo-sobre/sonic-the-hedgehog.html",

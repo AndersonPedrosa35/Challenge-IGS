@@ -1,2 +1,5 @@
 code {
   font-family: 'Heebo', 'Courier New', sans-serif; }
+
+.carousel-indicators [data-bs-target] {
+  content: url("../assets/Archive/pagination_off.png"); }
