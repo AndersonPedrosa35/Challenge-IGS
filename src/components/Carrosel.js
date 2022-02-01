@@ -11,8 +11,6 @@ export default function Carrosel() {
     <Carousel
       nextIcon={ <img src={ next } alt="Proximo" width={ "50px" } /> }
       prevIcon={ <img src={ previous } alt="Proximo" width={ "50px" } /> }
-      nextLabel={ "Proximo" }
-      prevLabel={ "Anteriors"}
     >
       <Carousel.Item>
         <ListCards />
