@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 export const Context = createContext();
 
@@ -19,3 +19,5 @@ function Provider({ children }) {
     </Context.Provider>
   )
 }
+
+export default Provider;

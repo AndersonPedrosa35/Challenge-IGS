@@ -82,6 +82,8 @@ body {
         padding: 0 0 10px 0;
         margin: 0;
         width: 100%; }
+        body .header-image .header-container-right {
+          display: none; }
         body .header-image .header-container-left {
           padding: 0;
           margin: 20px 0 0 -10px; }
@@ -116,6 +118,21 @@ body {
         box-shadow: inset 0 2px 5px gold, 0 0 1em #2a0542;
         height: 170px;
         width: 250px; }
+  body .modal-content {
+    background-image: url("../assets/Archive/box_help.png");
+    background-size: 100% 110%;
+    border-radius: 22px;
+    color: #fff;
+    height: 550px; }
+    body .modal-content .modal-header .btn-close {
+      background-image: url("../assets/Archive/btn_exit_help_on.png");
+      font-size: 30px; }
+  body .navbar-light {
+    background-color: transparent !important;
+    margin: -10px 50px 0 20px; }
+    body .navbar-light .navbar-toggler {
+      background-color: #fff;
+      padding: 7px; }
 
 @keyframes App-logo-spin {
   from {

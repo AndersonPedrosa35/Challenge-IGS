@@ -5,8 +5,8 @@ import naoVerSenha from "../assets/Archive/eye_off_idle.png";
 import userImage from "../assets/Archive/user_idle.png";
 import help from "../assets/Archive/help_idle.png";
 import logout from "../assets/Archive/logout_idle.png";
-import menu from "../assets/navbar.svg";
 import { Context } from '../contexts/Context';
+import ModalMenuMobile from './ModalMenuMobile';
 
 function seeMoney(state) {
   if (state === true) {
@@ -44,28 +44,20 @@ function detectar_mobile() {
  }
 
 export default function Header() {
-  const { setIsHelp, setIsMenu, isMenu, isHelp } = useContext(Context)
+  const { setIsHelp, setIsMenu, isMenu } = useContext(Context)
   const [see, setSee] = useState(false);
 
   return (
     <header className='header-image'>
       { detectar_mobile() === true ? (
-        <section className='header-container-left'>
-           <button
-            type="button"
-            className="button-icon"
-            onClick={ () => setIsMenu(!isMenu)}
-          >
-            <img src={ menu } alt="Menu" width={ "40px" } />
-          </button>
-        </section>
+        <ModalMenuMobile />
       ) : (
         <section className='header-container-left'
         role="section">
         <button
           type="button"
           className="button-icon"
-          onClick={ () => setIsHelp(!isHelp)}
+          onClick={ () => setIsHelp(true)}
         >
           <img src={ help } alt="Ajuda" width={ "50px" } />
         </button>

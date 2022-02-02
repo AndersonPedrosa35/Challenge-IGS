@@ -125,6 +125,10 @@ body {
       margin: 0;
       width: 100%;
 
+      .header-container-right {
+        display: none;
+      }
+
       .header-container-left {
         padding: 0;
         margin: 20px 0 0 -10px;
@@ -174,6 +178,32 @@ body {
         height: 170px;
         width: 250px;
       }
+    }
+  }
+
+  // Modal
+  .modal-content {
+    background-image: url('../assets/Archive/box_help.png');
+    background-size: 100% 110%;
+    border-radius: 22px;
+    color: #fff;
+    height: 550px;
+    .modal-header {
+      .btn-close {
+        background-image: url("../assets/Archive/btn_exit_help_on.png");
+        font-size: 30px;
+      }
+    }
+
+  }
+
+  // Menu Mobile 
+  .navbar-light {
+    background-color: transparent !important;
+    margin: -10px 50px 0 20px;
+    .navbar-toggler {
+      background-color: #fff;
+      padding: 7px;
     }
   }
 
