@@ -44,7 +44,7 @@ function detectar_mobile() {
  }
 
 export default function Header() {
-  const { setIsHelp, setIsMenu, isMenu } = useContext(Context)
+  const { setIsHelp, } = useContext(Context)
   const [see, setSee] = useState(false);
 
   return (

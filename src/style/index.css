@@ -21,3 +21,6 @@ code {
     width: 30px;
     padding: 0;
     height: 30px; }
+  @media (max-width: 420px) {
+    .carousel-indicators {
+      top: 1390px; } }

@@ -28,4 +28,8 @@ code {
     padding: 0;
     height: 30px;
   }
+
+  @media (max-width: 420px) {
+    top: 1390px
+  }
 }
