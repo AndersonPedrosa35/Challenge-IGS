@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Container,
   Nav,
@@ -6,8 +6,11 @@ import {
   NavDropdown,
   Offcanvas } from 'react-bootstrap';
 import menu from "../assets/navbar.svg";
+import { Context } from '../contexts/Context';
 
 export default function ModalMenuMobile() {
+  const { isHelp, setIsHelp } = useContext(Context);
+
   return (
     <Navbar bg="light" expand="sm">
       <Container fluid>
@@ -22,10 +25,17 @@ export default function ModalMenuMobile() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="">Ajuda</Nav.Link>
+              <Nav.Link>
+                <span
+                  role="button"
+                  onClick={ () => setIsHelp(true) }
+                >
+                  Ajuda
+                </span>
+              </Nav.Link>
               <NavDropdown title="Perfil" id="offcanvasNavbarDropdown">
-                <NavDropdown.Item href="#action3">Meus rendimentos</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">Minha conta</NavDropdown.Item>
+                <NavDropdown.Item href="/rendimentos">Meus rendimentos</NavDropdown.Item>
+                <NavDropdown.Item href="/perfil">Minha conta</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
                   Muito obrigado pela preferência

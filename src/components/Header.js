@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import verSenha from "../assets/Archive/eye_idle.png";
 import naoVerSenha from "../assets/Archive/eye_off_idle.png";
 import userImage from "../assets/Archive/user_idle.png";
@@ -47,6 +47,8 @@ export default function Header() {
   const { setIsHelp, } = useContext(Context)
   const [see, setSee] = useState(false);
 
+  const history = useHistory();
+
   return (
     <header className='header-image'>
       { detectar_mobile() === true ? (
@@ -64,14 +66,14 @@ export default function Header() {
         <button
           type="button"
           className="button-icon"
-          onClick={ () => <Link to="home" /> }
+          onClick={ () => history.push('/login') }
         >
           <img src={ logout } alt="Sair da conta" width={ "50px" } />
         </button>
         <button
           type="button"
           className="button-icon"
-          onClick={ () => <Link to="home" /> }
+          onClick={ () => history.push('/perfil') }
         >
           <img src={ userImage } alt="Perfil" width={ "50px" } />
         </button>
