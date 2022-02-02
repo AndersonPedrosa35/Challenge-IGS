@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import verSenha from "../assets/Archive/eye_idle.png";
 import naoVerSenha from "../assets/Archive/eye_off_idle.png";
@@ -6,6 +6,7 @@ import userImage from "../assets/Archive/user_idle.png";
 import help from "../assets/Archive/help_idle.png";
 import logout from "../assets/Archive/logout_idle.png";
 import menu from "../assets/navbar.svg";
+import { Context } from '../contexts/Context';
 
 function seeMoney(state) {
   if (state === true) {
@@ -43,9 +44,8 @@ function detectar_mobile() {
  }
 
 export default function Header() {
+  const { setIsHelp, setIsMenu, isMenu, isHelp } = useContext(Context)
   const [see, setSee] = useState(false);
-  const [isHelp, setIsHelp] = useState(false);
-  const [isMenu, setIsMenu] = useState(false);
 
   return (
     <header className='header-image'>
