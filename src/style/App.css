@@ -1,25 +1,101 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Heebo', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url("../assets/Archive/background.png"); }
   body .App {
     display: flex;
     flex-direction: column; }
-  body .header {
-    display: flex; }
-  body .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+  body .header-image {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white; }
-  body .App-link {
-    color: #61dafb; }
+    background-image: url("../assets/Archive/header.png");
+    background-position: cover;
+    background-size: 100% 100%;
+    justify-content: space-between;
+    padding: 3rem 0 2rem; }
+    body .header-image span {
+      color: yellow; }
+    body .header-image .button-icon {
+      background-color: transparent;
+      border: none;
+      display: flex;
+      justify-content: space-between; }
+    body .header-image .header-container-left {
+      padding: 0 0.8rem 0.8rem;
+      margin-top: -2rem;
+      display: flex; }
+      body .header-image .header-container-left img {
+        margin-left: 1rem; }
+    body .header-image .header-container-right {
+      margin-top: -1.8rem;
+      margin-right: 2.3rem;
+      height: 45px;
+      width: 250px; }
+      body .header-image .header-container-right img {
+        padding: 0.25rem 0.25rem 0.25rem 1rem;
+        justify-self: flex-end; }
+      body .header-image .header-container-right .container-money {
+        width: 250px; }
+        body .header-image .header-container-right .container-money span:first-child {
+          margin: 0.25rem 0 0 3rem;
+          align-self: center; }
+        body .header-image .header-container-right .container-money span {
+          margin-top: 0.5rem;
+          display: inline; }
+        body .header-image .header-container-right .container-money strong {
+          display: inline;
+          color: yellow;
+          font-size: 2rem;
+          margin-top: 0.25rem; }
+    body .header-image .header-container-center {
+      color: #e9e900;
+      font-size: 1.5rem;
+      margin: -2.1rem 0 0 1rem;
+      height: 4.4rem;
+      width: 17.5rem;
+      z-index: 2;
+      text-shadow: -1.5px 0 black, 0 2px black, 1.5px 0 black, 0 -1.5px black; }
+      body .header-image .header-container-center h5 {
+        margin: -0.8rem 0 0.5rem;
+        text-align: center;
+        text-shadow: 0.1em 0.1em 0.2em black; }
+      body .header-image .header-container-center .jackpot {
+        font-size: 5rem;
+        margin: -4.5rem 0 0 -1.5rem; }
+      body .header-image .header-container-center span {
+        font-weight: 900;
+        margin-left: -2.5rem; }
+      body .header-image .header-container-center small {
+        font-size: 1.5rem; }
+    @media (max-width: 420px) {
+      body .header-image {
+        display: flex;
+        background-image: linear-gradient(#9014e4, #2a0542);
+        justify-content: space-between;
+        padding: 0 0 10px 0;
+        margin: 0; }
+        body .header-image .header-container-left {
+          padding: 0;
+          margin: 20px 0 0 -10px; }
+        body .header-image .header-container-center {
+          background-color: #2a0542;
+          border: 1px solid #a0a025;
+          border-radius: 2rem;
+          box-shadow: inset 0 0 5px gold, 0 0 1em #2a0542;
+          height: 55px;
+          margin: 18px 0 0 8px;
+          padding: 0 0.5rem;
+          font-size: 16px;
+          width: 400px; }
+          body .header-image .header-container-center .jackpot {
+            margin: -33px 0 0 8px;
+            padding: 0;
+            font-size: 25px; }
+          body .header-image .header-container-center h5 {
+            margin-top: -8px; }
+          body .header-image .header-container-center span {
+            margin: 0 0 0 -3px; } }
 
 @keyframes App-logo-spin {
   from {
