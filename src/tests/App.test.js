@@ -22,22 +22,31 @@ describe("Testando a pagina Login", () => {
     expect(senha).toBeInTheDocument();
   })
   it("Deve renderizar um botão desabilitado", () => {
-    const { getByTestId } = renderWithRoute(<App />)
+    const { getByTestId, } = renderWithRoute(<App />)
     const button = getByTestId('login-submit-btn');
     expect(button).toBeInTheDocument();
     expect(button).toBeDisabled();
   });
   it("Deve ser redirecionado para a Home", () => {
-    const { getByLabelText, getByTestId } = renderWithRoute(<App />);
-    
-  })
-  
-  
-  
-  expect(senha).toBeInTheDocument();
+    const { getByLabelText, getByTestId, history } = renderWithRoute(<App />);
+    const email = getByLabelText("Email");
+    const senha = getByLabelText("Senha");
 
-})
+    userEvent.type(email, user.email);
+    userEvent.type(senha, user.senha);
+
+    const button = getByTestId('login-submit-btn');
+    expect(button).toBeEnabled();
+    
+    userEvent.click(button);
+    expect(history.location.pathname).toBe('/');
+  })
+});
+
 describe("Testando o componente header", () => {
+  beforeAll(() => {
+    localStorage.setItem('user', JSON.stringify(user))
+  })
   it('deve renderizar uma imagem de logout', () => {
     const { getByAltText, history } = renderWithRoute(<App />);
 
@@ -79,7 +88,7 @@ describe("Testando o componente header", () => {
     expect(jackpot[0]).toHaveTextContent("12");
   });
 
-  it('deve renderizar o valor que eu tenho em caixa no campo dos meus valores', async () => {
+  it('deve renderizar o valor que eu tenho em caixa no campo dos meus valores', () => {
     const { getByTestId, findByText } = renderWithRoute(<App />);
     const moneyContainer = getByTestId("container-money");
     const textMoney = moneyContainer.childNodes[1].textContent;
@@ -87,6 +96,33 @@ describe("Testando o componente header", () => {
 
     userEvent.click(moneyContainer);
     const money = findByText("0000,00");
-    waitFor(() => expect(money).toBeInTheDocument()); 
+    waitFor(() => expect(money).toBeInTheDocument());
   });
+
+  it('Deve renderizar um pop-up de ajuda para o usuário', () => {
+    const { getAllByTestId, getByRole } = renderWithRoute(<App />);
+    const help = getAllByTestId('container-img')[0];
+
+    userEvent.click(help);
+    const modalHelp = getByRole('dialog');
+    expect(modalHelp).toBeInTheDocument();
+  })
+
+  it('Deve ser redirecionado para a página de Login', () => {
+    const { getAllByTestId, getByLabelText } = renderWithRoute(<App />);
+    const perfilIcon = getAllByTestId('container-img');
+
+    userEvent.click(perfilIcon[1]);
+    const email = getByLabelText('Email');
+    expect(email).toBeInTheDocument();
+  });
+})
+
+describe('Testando a pagina de perfil', () => {
+  beforeAll(() => {
+    localStorage.setItem('user', JSON.stringify(user))
+  })
+  it("", () => {
+    
+  })
 })

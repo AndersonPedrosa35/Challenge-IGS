@@ -60,6 +60,7 @@ export default function Header() {
         <button
           type="button"
           className="button-icon"
+          data-testid="container-img"
           onClick={ () => setIsHelp(true)}
         >
           <img src={ help } alt="Ajuda" width={ "50px" } />
@@ -67,6 +68,7 @@ export default function Header() {
         <button
           type="button"
           className="button-icon"
+          data-testid="container-img"
           onClick={ () => logout(history) }
         >
           <img src={ logoutImg } alt="Sair da conta" width={ "50px" } />
@@ -74,6 +76,7 @@ export default function Header() {
         <button
           type="button"
           className="button-icon"
+          data-testid="container-img"
           onClick={ () => history.push('/perfil') }
         >
           <img src={ userImage } alt="Perfil" width={ "50px" } />
