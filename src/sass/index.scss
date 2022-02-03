@@ -1,3 +1,35 @@
 code {
   font-family: 'Heebo', 'Courier New', sans-serif;
 }
+
+.carousel-indicators {
+  top: 450px;
+  
+  button {
+    &:nth-child(1n):not(.active) {
+    background-image: url("../assets/Archive/pagination_off.png") !important;
+    background-position: cover;
+    background-size: 100% 100%;
+    border-radius: 100%;
+    border: none;
+    width: 30px;
+    padding: 0;
+    height: 30px;
+    }
+  }
+
+  .active {
+    background-image: url("../assets/Archive/pagination_on.png") !important;
+    background-position: cover;
+    background-size: 100% 100%;
+    border-radius: 100%;
+    border: none;
+    width: 30px;
+    padding: 0;
+    height: 30px;
+  }
+
+  @media (max-width: 420px) {
+    top: 1390px
+  }
+}

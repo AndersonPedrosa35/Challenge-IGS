@@ -1,0 +1,27 @@
+.login {
+  background-image: url("../assets/background-login.jpg");
+  background-size: 100% 100%;
+  background-position: cover;
+  width: 100vw;
+  height: 100vh;
+
+  div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 250px;
+
+    label {
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    button:disabled::before {
+      content: "Digite um email com formato válido e uma senha maior que 6 caracteres para ";
+    }
+  }
+
+  @media (max-width: 420px) {
+    background-size: 99% 99%;
+  }
+}

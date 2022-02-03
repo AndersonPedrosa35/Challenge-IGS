@@ -1,12 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './style/App.css';
-import Header from './components/Header';
+import Home from './pages/Home';
+import Provider from './contexts/Context';
+import Perfil from './pages/Perfil';
+import Login from './pages/Login';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <BrowserRouter>
+      <Provider>
+        <Switch>
+          <Route exact path='/perfil' render={ () => <Perfil /> } />
+          <Route exact path='/login' render={ () => <Login /> } />
+          <Route exact path='/' render={ () => <Home /> } />
+        </Switch>
+      </Provider>
+    </BrowserRouter>
   );
 }
 

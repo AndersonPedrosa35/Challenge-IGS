@@ -11,6 +11,18 @@ body {
   .App {
     display: flex;
     flex-direction: column;
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 420px) {
+      .footer {
+        bottom: -780px;
+      }
+    }
   }
 
   .header-image {
@@ -23,13 +35,6 @@ body {
     
     span {
       color: yellow;
-    }
-
-    .button-icon {
-      background-color: transparent;
-      border: none;
-      display: flex;
-      justify-content: space-between;
     }
 
     .header-container-left {
@@ -49,7 +54,7 @@ body {
       width: 250px;
 
       img {
-        padding: 0.25rem 0.25rem 0.25rem 1rem;
+        margin: 3px 5px 0 0;
         justify-self: flex-end;
       }
 
@@ -57,12 +62,11 @@ body {
         width: 250px;
   
         span:first-child {
-          margin: 0.25rem 0 0 3rem;
+          margin: 0rem 0 0 3rem;
           align-self: center;
         }
   
         span {
-          margin-top: 0.5rem;
           display: inline;
         }
     
@@ -70,7 +74,7 @@ body {
           display: inline;
           color: yellow;
           font-size: 2rem;
-          margin-top: 0.25rem;
+          margin-top: -0.2rem;
         }
       }
     }
@@ -93,7 +97,7 @@ body {
 
       .jackpot {
         font-size: 5rem;
-        margin: -4.5rem 0 0 -1.5rem;
+        margin: -3.8rem 0 0 -1.5rem;
       }
 
       span {
@@ -112,6 +116,11 @@ body {
       justify-content: space-between;
       padding: 0 0 10px 0;
       margin: 0;
+      width: 100%;
+
+      .header-container-right {
+        display: none;
+      }
 
       .header-container-left {
         padding: 0;
@@ -124,34 +133,81 @@ body {
         border-radius: 2rem;
         box-shadow: inset 0 0 5px gold, 0 0 1em rgb(42, 5, 66);
         height: 55px;
-        margin: 18px 0 0 8px;
+        margin: 18px 0 0 50px;
         padding: 0 0.5rem;
         font-size: 16px;
         width: 400px;
 
         .jackpot {
-          margin: -33px 0 0 8px;
+          margin: -33px 0 0 13px;
           padding: 0;
           font-size: 25px;
         }
 
         h5 {
-          margin-top: -8px;
+          margin-top: -10px;
         }
 
         span {
-          margin: 0 0 0 -3px;
+          margin: 0;
         }
       }
     }
   }
 
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
+  .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 50px 0;
+
+    .mini-card {
+      margin: 10px 10px;
+
+      img {
+        border: 1px solid yellow;
+        border-radius: 1rem;
+        box-shadow: inset 0 2px 5px gold, 0 0 1em rgb(42, 5, 66);
+        height: 170px;
+        width: 250px;
+      }
     }
-    to {
-      transform: rotate(360deg);
+  }
+
+  // Modal
+  .modal-content {
+    background-image: url('../assets/Archive/box_help.png');
+    background-size: 100% 110%;
+    border-radius: 22px;
+    color: #fff;
+    height: 550px;
+    
+    .modal-header {
+      
+      .btn-close {
+        background-image: url("../assets/Archive/btn_exit_help_on.png");
+        font-size: 30px;
+      }
     }
+
+  }
+
+  // Menu Mobile 
+  .navbar-light {
+    background-color: transparent !important;
+    margin: -10px 50px 0 20px;
+    
+    .navbar-toggler {
+      background-color: #fff;
+      padding: 7px;
+    }
+  }
+  // Menu Mobile end
+
+  .button-icon {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
   }
 }
