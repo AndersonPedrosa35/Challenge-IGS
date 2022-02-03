@@ -3,6 +3,8 @@ import userEvent from '@testing-library/user-event';
 import React from "react"
 import renderWithRoute from './renderWithRouter';
 import App from '../App';
+import Perfil from '../pages/Perfil';
+import { get } from 'lodash';
 
 
 const user = {
@@ -46,7 +48,7 @@ describe("Testando a pagina Login", () => {
 describe("Testando o componente header", () => {
   beforeAll(() => {
     localStorage.setItem('user', JSON.stringify(user))
-  })
+  });
   it('deve renderizar uma imagem de logout', () => {
     const { getByAltText, history } = renderWithRoute(<App />);
 
@@ -88,7 +90,7 @@ describe("Testando o componente header", () => {
     expect(jackpot[0]).toHaveTextContent("12");
   });
 
-  it('deve renderizar o valor que eu tenho em caixa no campo dos meus valores', () => {
+  it('deve renderizar o valor que eu tenho em caixa no campo dos meus valores', async () => {
     const { getByTestId, findByText } = renderWithRoute(<App />);
     const moneyContainer = getByTestId("container-money");
     const textMoney = moneyContainer.childNodes[1].textContent;
@@ -116,13 +118,79 @@ describe("Testando o componente header", () => {
     const email = getByLabelText('Email');
     expect(email).toBeInTheDocument();
   });
-})
+});
+
+describe('Testando o Carrosel da Home', () => {
+  beforeAll(() => {
+    const { getByLabelText, getByTestId, history } = renderWithRoute(<App />);
+    const email = getByLabelText("Email");
+    const senha = getByLabelText("Senha");
+
+    userEvent.type(email, user.email);
+    userEvent.type(senha, user.senha);
+
+    const button = getByTestId('login-submit-btn');
+    userEvent.click(button);
+  });
+
+  it('Deve renderizar imagens', () => {
+    const { getAllByRole } = renderWithRoute(<App />);
+    const carrossel = getAllByRole('imagens');
+  });
+
+  it('Fazendo logout', () => {
+    const { getAllByTestId, getByLabelText } = renderWithRoute(<App />);
+    const perfilIcon = getAllByTestId('container-img');
+
+    userEvent.click(perfilIcon[1]);
+    const email = getByLabelText('Email');
+    expect(email).toBeInTheDocument();
+  })
+});
 
 describe('Testando a pagina de perfil', () => {
   beforeAll(() => {
-    localStorage.setItem('user', JSON.stringify(user))
-  })
-  it("", () => {
-    
-  })
-})
+    const { getByLabelText, getByTestId, history } = renderWithRoute(<App />);
+    const email = getByLabelText("Email");
+    const senha = getByLabelText("Senha");
+
+    userEvent.type(email, user.email);
+    userEvent.type(senha, user.senha);
+
+    const button = getByTestId('login-submit-btn');
+    userEvent.click(button);
+  });
+  it("Deve renderizar o texto olá {nome do email} na pagina de perfil", () => {
+    const { getByRole, getAllByTestId, history } = renderWithRoute(<App />);
+    const perfilIcon = getAllByTestId('container-img');
+    userEvent.click(perfilIcon[2]);
+    const welcome = getByRole('heading', {
+      level: 1
+    });
+    expect(welcome).toHaveTextContent(`Olá ${user.email}`);
+  });
+
+  it("Deve renderizar os rendimentos da conta", () => {
+    const { getByRole } = renderWithRoute(<App />);
+    const money = getByRole('paragraph');
+    expect(money).toHaveTextContent('Seus rendimentos');
+  });
+
+  it("Deve renderizar um icone logout", () => {
+    const { getByRole } = renderWithRoute(<App />);
+    const iconLogout = getByRole('button');
+    expect(iconLogout).toHaveClass('button-icon');
+    expect(iconLogout.childNodes[0]).toHaveAttribute('alt', 'Sair da conta');
+    expect(iconLogout.childNodes[0]).toHaveAttribute('src', 'logout_idle.png');
+  });
+
+  it("Deve ser redirecionado para a Home", () => {
+    const { getByRole, getByLabelText } = renderWithRoute(<App />);
+    const iconLogout = getByRole('button');
+
+    userEvent.click(iconLogout);
+
+    const login = getByLabelText('Email');
+    expect(login).toBeInTheDocument();
+  });
+});

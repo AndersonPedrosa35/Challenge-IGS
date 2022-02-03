@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { Context } from '../contexts/Context';
 
 function Form() {
-  const history = useHistory();
-  const { email, setEmail, pass, setPass } = useContext(Context);
+  const { email, setEmail, pass, setPass, history } = useContext(Context);
   const nameLength = 6;
 
   function submit(ev) {

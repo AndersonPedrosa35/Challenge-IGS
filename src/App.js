@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './style/App.css';
 import Home from './pages/Home';
 import Provider from './contexts/Context';
@@ -10,9 +10,11 @@ function App() {
   return (
     <BrowserRouter>
       <Provider>
-        <Route exact path='/' render={ () => <Home /> } />
-        <Route path='/perfil' render={ () => <Perfil /> } />
-        <Route path='/login' render={ () => <Login /> } />
+        <Switch>
+          <Route exact path='/perfil' render={ () => <Perfil /> } />
+          <Route exact path='/login' render={ () => <Login /> } />
+          <Route exact path='/' render={ () => <Home /> } />
+        </Switch>
       </Provider>
     </BrowserRouter>
   );

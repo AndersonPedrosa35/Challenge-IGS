@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 import verSenha from "../assets/Archive/eye_idle.png";
 import naoVerSenha from "../assets/Archive/eye_off_idle.png";
 import userImage from "../assets/Archive/user_idle.png";
@@ -45,10 +44,8 @@ function detectar_mobile() {
  }
 
 export default function Header() {
-  const { setIsHelp, } = useContext(Context)
+  const { setIsHelp, history } = useContext(Context)
   const [see, setSee] = useState(false);
-
-  const history = useHistory();
 
   return (
     <header className='header-image'>

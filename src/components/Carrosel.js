@@ -11,13 +11,19 @@ export default function Carrosel() {
       nextIcon={ <img src={ next } alt="Proximo" width={ "50px" } /> }
       prevIcon={ <img src={ previous } alt="Proximo" width={ "50px" } /> }
     >
-      <Carousel.Item>
+      <Carousel.Item
+        role="imagens"
+      >
         <ListCards />
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item
+        role="imagens"
+      >
         <ListCards />
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item
+        role="imagens"
+      >
         <ListCards />
       </Carousel.Item>
     </Carousel>
