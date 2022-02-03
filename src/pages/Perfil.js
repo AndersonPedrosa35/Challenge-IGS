@@ -7,11 +7,11 @@ import "../style/Perfil.css";
 
 export default function Perfil() {
   const { setEmail, email, history } = useContext(Context);
-  
 
   useEffect(() => {
     getUserOrRedirectLogin(setEmail, history);
   }, [])
+
   return (
       <section className="perfil">
           <h1>{`Olá ${email}`}</h1>

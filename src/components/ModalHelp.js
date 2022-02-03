@@ -6,7 +6,6 @@ export default function ModalHelp() {
   const { isHelp, setIsHelp } = useContext(Context);
   return (
         <Modal
-          size=''
           show={isHelp}
           onHide={() => setIsHelp(false)}
           fullscreen="xl-down"

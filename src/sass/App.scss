@@ -181,7 +181,9 @@ body {
     border-radius: 22px;
     color: #fff;
     height: 550px;
+    
     .modal-header {
+      
       .btn-close {
         background-image: url("../assets/Archive/btn_exit_help_on.png");
         font-size: 30px;
@@ -194,18 +196,18 @@ body {
   .navbar-light {
     background-color: transparent !important;
     margin: -10px 50px 0 20px;
+    
     .navbar-toggler {
       background-color: #fff;
       padding: 7px;
     }
   }
+  // Menu Mobile end
 
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  .button-icon {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
   }
 }

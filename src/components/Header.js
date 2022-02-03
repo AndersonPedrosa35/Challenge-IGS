@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
+import { Context } from '../contexts/Context';
+import ModalMenuMobile from './ModalMenuMobile';
+import { logout } from '../utils/Logout';
 import verSenha from "../assets/Archive/eye_idle.png";
 import naoVerSenha from "../assets/Archive/eye_off_idle.png";
 import userImage from "../assets/Archive/user_idle.png";
 import help from "../assets/Archive/help_idle.png";
 import logoutImg from "../assets/Archive/logout_idle.png";
-import { Context } from '../contexts/Context';
-import ModalMenuMobile from './ModalMenuMobile';
-import { logout } from '../utils/Logout';
 
 function seeMoney(state) {
   if (state === true) {

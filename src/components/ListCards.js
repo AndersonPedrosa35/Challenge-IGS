@@ -1,8 +1,7 @@
 import React from 'react';
+import MiniCard from './MiniCard';
 import jogos from '../data/jogos';
 import cassanique from '../assets/Archive/icon_idle.png';
-import MiniCard from './MiniCard';
-import { Link } from 'react-router-dom';
 
 function findNameGames(url) {
     return url.split('sobre/')[1].split('.html')[0];

@@ -9,12 +9,9 @@ import { getUserOrRedirectLogin } from '../utils/getUserOrRedirect';
 export default function Home() {
   const { setEmail, history } = useContext(Context);
 
-  
-
   useEffect(() => {
     getUserOrRedirectLogin(setEmail, history)
   }, [])
-
 
   return (
     <div className="App">
