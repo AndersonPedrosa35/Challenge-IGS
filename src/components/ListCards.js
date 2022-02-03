@@ -24,14 +24,17 @@ function renderCards() {
 
 export default function ListCards() {
     return (
-      <section className="container-cards">
+      <section
+        className="container-cards"
+        role="imagens"
+      >
         { renderCards() }
-        <Link
-          to="casinoonlinegratis.com.br/caca-niquel/ultra-hot/"
+        <a
+          href="casinoonlinegratis.com.br/caca-niquel/ultra-hot/"
           className="mini-card"
         >
           <img src={ cassanique } alt="Cassanique" />
-        </Link>
+        </a>
       </section>
     )
 }

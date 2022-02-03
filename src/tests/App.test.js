@@ -3,8 +3,7 @@ import userEvent from '@testing-library/user-event';
 import React from "react"
 import renderWithRoute from './renderWithRouter';
 import App from '../App';
-import Perfil from '../pages/Perfil';
-import { get } from 'lodash';
+import jogos from '../data/jogos.js';
 
 
 const user = {
@@ -136,6 +135,10 @@ describe('Testando o Carrosel da Home', () => {
   it('Deve renderizar imagens', () => {
     const { getAllByRole } = renderWithRoute(<App />);
     const carrossel = getAllByRole('imagens');
+    carrossel[0].childNodes.forEach((link) => {
+      expect(link).toBeInTheDocument();
+      expect(link.childNodes[0]).toBeVisible()
+    });
   });
 
   it('Fazendo logout', () => {
