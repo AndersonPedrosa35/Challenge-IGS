@@ -4,9 +4,45 @@ import React from "react"
 import renderWithRoute from './renderWithRouter';
 import App from '../App';
 
+
+const user = {
+  email: "teste.teste@hotmail.com",
+  senha: "1234567"
+}
+
+describe("Testando a pagina Login", () => {
+  it("Deve renderizar uma label com o texto Email e com um input", () => {
+    const { getByLabelText } = renderWithRoute(<App />);
+    const email = getByLabelText("Email");
+    expect(email).toBeInTheDocument();
+  });
+  it("Deve renderizar uma label com o texto Senha e com um input", () => {
+    const { getByLabelText } = renderWithRoute(<App />);
+    const senha = getByLabelText("Senha");
+    expect(senha).toBeInTheDocument();
+  })
+  it("Deve renderizar um botão desabilitado", () => {
+    const { getByTestId } = renderWithRoute(<App />)
+    const button = getByTestId('login-submit-btn');
+    expect(button).toBeInTheDocument();
+    expect(button).toBeDisabled();
+  });
+  it("Deve ser redirecionado para a Home", () => {
+    const { getByLabelText, getByTestId } = renderWithRoute(<App />);
+    
+  })
+  
+  
+  
+  expect(senha).toBeInTheDocument();
+
+})
 describe("Testando o componente header", () => {
   it('deve renderizar uma imagem de logout', () => {
-    const { getByAltText } = renderWithRoute(<App />);
+    const { getByAltText, history } = renderWithRoute(<App />);
+
+    history.push('/');
+
     const logout = getByAltText('Sair da conta');
     expect(logout).toBeInTheDocument();
   });

@@ -5,11 +5,11 @@ import {
   Navbar,
   NavDropdown,
   Offcanvas } from 'react-bootstrap';
-import menu from "../assets/navbar.svg";
+import { Link } from 'react-router-dom';
 import { Context } from '../contexts/Context';
 
 export default function ModalMenuMobile() {
-  const { isHelp, setIsHelp } = useContext(Context);
+  const { setIsHelp } = useContext(Context);
 
   return (
     <Navbar bg="light" expand="sm">
@@ -34,8 +34,11 @@ export default function ModalMenuMobile() {
                 </span>
               </Nav.Link>
               <NavDropdown title="Perfil" id="offcanvasNavbarDropdown">
-                <NavDropdown.Item href="/rendimentos">Meus rendimentos</NavDropdown.Item>
-                <NavDropdown.Item href="/perfil">Minha conta</NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/perfil">
+                    Minha conta
+                  </Link> 
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
                   Muito obrigado pela preferência

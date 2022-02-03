@@ -4,9 +4,10 @@ import verSenha from "../assets/Archive/eye_idle.png";
 import naoVerSenha from "../assets/Archive/eye_off_idle.png";
 import userImage from "../assets/Archive/user_idle.png";
 import help from "../assets/Archive/help_idle.png";
-import logout from "../assets/Archive/logout_idle.png";
+import logoutImg from "../assets/Archive/logout_idle.png";
 import { Context } from '../contexts/Context';
 import ModalMenuMobile from './ModalMenuMobile';
+import { logout } from '../utils/Logout';
 
 function seeMoney(state) {
   if (state === true) {
@@ -66,9 +67,9 @@ export default function Header() {
         <button
           type="button"
           className="button-icon"
-          onClick={ () => history.push('/login') }
+          onClick={ () => logout(history) }
         >
-          <img src={ logout } alt="Sair da conta" width={ "50px" } />
+          <img src={ logoutImg } alt="Sair da conta" width={ "50px" } />
         </button>
         <button
           type="button"

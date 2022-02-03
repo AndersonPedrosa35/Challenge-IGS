@@ -3,7 +3,6 @@ import { Carousel } from 'react-bootstrap';
 import ListCards from './ListCards';
 import next from '../assets/Archive/arrow_right.png';
 import previous from '../assets/Archive/arrow_left.png';
-import indicatorOn from '../assets/Archive/pagination_on.png';
 
 
 export default function Carrosel() {

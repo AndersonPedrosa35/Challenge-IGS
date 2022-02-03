@@ -23,11 +23,6 @@ body {
     padding: 3rem 0 2rem; }
     body .header-image span {
       color: yellow; }
-    body .header-image .button-icon {
-      background-color: transparent;
-      border: none;
-      display: flex;
-      justify-content: space-between; }
     body .header-image .header-container-left {
       padding: 0 0.8rem 0.8rem;
       margin-top: -2rem;
