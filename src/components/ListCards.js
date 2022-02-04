@@ -12,6 +12,7 @@ function renderCards() {
     return (
       <a
         href={ url }
+        target="_blank"
       >
         <MiniCard
           src={ image }
@@ -29,7 +30,8 @@ export default function ListCards() {
       >
         { renderCards() }
         <a
-          href="casinoonlinegratis.com.br/caca-niquel/ultra-hot/"
+          href="https://www.casinoonlinegratis.com.br/caca-niquel/ultra-hot/"
+          target="_blank"
           className="mini-card"
         >
           <img src={ cassanique } alt="Cassanique" />
