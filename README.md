@@ -2,6 +2,8 @@
 
 O objetivo desse projeto é criar uma plataforma de ganhos, com mini-jogos para jogar e ganhar dinheiro, no momento foi criada a estrutura inicial e a estilização da plataforma, para jogar os jogos, você deverá clicar no jogo que deseja e será redirecionado para a tela de instalação, no caso do jogo jackpot, será redirecionado direto para o jogo.
 
+<p>Não foi feito o Back-end e o Banco de dados por que não seria viável para entregar na data prevista.</p>
+
 ## Ferramentas
 
   React.js</br>
