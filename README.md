@@ -4,22 +4,27 @@ O objetivo desse projeto é criar uma plataforma de ganhos, com mini-jogos para 
 
 ## Ferramentas
 
-  React.js
-  React Testing Library
-  Context API
-  SASS
-  React Bootstrap
-  Docker
+  React.js</br>
+  React Testing Library</br>
+  Context API</br>
+  SASS</br>
+  React Bootstrap</br>
+  Docker</br>
 
 ### Como utilizar
+
+  #### Deploy
+  O Container docker foi hospedado na Amazon AWS com o serviço Elastic Container Service, utilizando algumas VPNs no container, a url disponibilizada foi
+  http://challenge-igs-loadbalance-799624599.sa-east-1.elb.amazonaws.com/, acesse para ver mais detalhes do projeto.
 
   #### Instalar
 Para iniciar o projeto você deverá clonar o projeto com o comando ```git clone <url do metodo utilizado>```, assim que finalizado o carregamento,
  vá para o diretório, dentro do diretório execute ```npm install``` ou ```yarn install``` para instalar as dependências.
 
   #### Docker
-Depois de instalada as dependências do projeto, verifique se está instalado o Docker na sua maquina com ```docker -v```, se não retorna a versão do docker, você deverá instala-lo.
- Para executar o docker você deverá instalar a imagem do DockerFile com ```docker image build -t <nome-que-você-quer-colocar-na-imagem> .```, e depois para criar o container ```docker container run -dti -p <sua-porta-local>:80(porta default do nginx) --name <nome-que-você-quer-colocar-no-container> <ID ou NOME DA IMAGEM>```.
+Depois de instalada as dependências do projeto, verifique se está instalado o Docker ou o Docker Compose que facilita a execução do container, na sua maquina com ```docker -v``` para o Docker ou ```docker-compose -v``` para o Docker Compose, se não retorna a versão de pelo menos um dos dockers, você deverá instala-lo.
+ Com o Docker Compose em mãos, apenas digite no terminal ```docker-compose up --build web``` e está rodando na porta 80 do localhost, ou você poderá seguir os passos do Docker abaixo.
+ Para executar o docker você deverá executar a imagem do DockerFile com ```docker image build -t <nome-que-você-quer-colocar-na-imagem> .```, e depois para criar o container ```docker container run -dti -p <sua-porta-local>:80(porta default do nginx) --name <nome-que-você-quer-colocar-no-container> <ID ou NOME DA IMAGEM>```.
  Será executado o docker no localhost na porta especificada em <sua-porta-local>, para acessar, vá para o navegador e digite localhost:<sua-porta-local> na URL
     ### Ou
   #### Executar
