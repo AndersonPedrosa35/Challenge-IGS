@@ -4,7 +4,7 @@ O objetivo desse projeto é criar uma plataforma de ganhos, com mini-jogos para 
 
 ## Ferramentas
 
-  React.js
+  React.js<br/>
   React Testing Library
   Context API
   SASS
