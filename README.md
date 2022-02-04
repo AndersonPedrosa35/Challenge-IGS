@@ -4,12 +4,12 @@ O objetivo desse projeto é criar uma plataforma de ganhos, com mini-jogos para 
 
 ## Ferramentas
 
-  <h3>React.js</h3>
-  <h3>React Testing Library</h3>
-  <h3>Context API</h3>
-  <h3>SASS</h3>
-  <h3>React Bootstrap</h3>
-  <h3>Docker</h3>
+  <p>React.js</p>
+  <p>React Testing Library</p>
+  <p>Context API</p>
+  <p>SASS</p>
+  <p>React Bootstrap</p>
+  <p>Docker</p>
 
 ### Como utilizar
 
